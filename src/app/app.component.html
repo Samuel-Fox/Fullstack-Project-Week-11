@@ -4,7 +4,7 @@
   <button data-toggle="modal" data-target="#updateModal">Update</button>
   <button data-toggle="modal" data-target="#deleteModal">Delete</button>
   <form class="form-inline input-group">
-    <input class="form-control input-sm mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <input class="form-control input-sm mr-sm-2" type="search" (ngModelChange)="searchEmployee(search.value)" #search="ngModel" ngModel name = "search" placeholder="search" aria-label="Search">
     <button class="btn btn-outline-success my-2 my-sm-0 input-group-addon" type="submit">Search</button>
   </form>
 </nav>

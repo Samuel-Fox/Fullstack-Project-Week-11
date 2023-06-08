@@ -73,4 +73,19 @@ export class AppComponent implements OnInit{
       error: (e) => alert(e.message)
     })
   }
+
+  public searchEmployee(search: string): void {
+    const searchResults: Employee[] = [];
+    for(const employee of this.employees) {
+      if(employee.lastName.toLowerCase().indexOf(search.toLowerCase()) !== -1
+        || employee.firstName.toLowerCase().indexOf(search.toLowerCase()) !== -1
+        || employee.emailId.toLowerCase().indexOf(search.toLowerCase()) !== -1) {
+        searchResults.push(employee);
+      }
+    }
+    this.employees = searchResults;
+    if(searchResults.length == 0 || !search) {
+      this.getEmployees();
+    }
+  }
 }
