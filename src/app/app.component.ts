@@ -54,6 +54,7 @@ export class AppComponent implements OnInit{
       next : (response: Employee) => this.getEmployees(),
       error: (e) => alert(e.message)
     })
+    addForm.resetForm();
   }
 
   public onUpdateEmployee(updateForm: NgForm): void {
@@ -63,6 +64,7 @@ export class AppComponent implements OnInit{
       next : (response: Employee) => this.getEmployees(),
       error: (e) => alert(e.message)
     })
+    updateForm.resetForm();
   }
 
   public onDeleteEmployee(deleteForm: NgForm): void {

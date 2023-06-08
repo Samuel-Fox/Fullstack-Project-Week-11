@@ -21,12 +21,6 @@ export class EmployeeService {
   }
 
   public updateEmployee(employee: Employee): Observable<Employee> {
-    //
-    //
-    //CHANGE URL TO WHAT IS IN BACKEND
-    //
-    //
-    console.log("FINAL EMPLOYEE" + employee)
     return this.http.put<Employee>(`${this.serverUrl}/employees/${employee.id}`, employee);
   }
 
